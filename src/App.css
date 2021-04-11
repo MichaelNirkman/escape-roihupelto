@@ -1,0 +1,19 @@
+.App {
+  background-color: white;
+  color: black;
+}
+
+.bike-container {
+  width: 100%;
+  text-align:center;
+}
+
+.toggle-button {
+  width: 100%;
+  min-height: 50px;
+  font-size: 9vh;
+  vertical-align: baseline;
+  background-color: black;
+  color: white;
+  outline: 2px solid green;
+}
