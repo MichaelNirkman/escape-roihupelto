@@ -7,7 +7,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Bikes from "./Bikes"
+import BusList from './BusList'
 import ContentContainer from "./ContentContainer"
 import DirectionsBusIcon from '@material-ui/icons/DirectionsBus';
 import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
@@ -54,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#2e022e",
     color: "white",
   },
+  capitalize: {
+    textTransform: "capitalize",
+  }
 }));
 
 export default function FullWidthTabs() {
@@ -81,9 +84,9 @@ export default function FullWidthTabs() {
           className={classes.colors}
           variant="fullWidth"
         >
-          <Tab label="Dösät" icon={<DirectionsBusIcon />} {...a11yProps(0)} />
-          <Tab label="Tsygät" icon={<DirectionsBikeIcon />} {...a11yProps(1)} />
-          <Tab label="Metukka" icon={<TrainIcon />} {...a11yProps(2)} />
+          <Tab className={classes.capitalize} label="Bussi" icon={<DirectionsBusIcon />} {...a11yProps(0)} />
+          <Tab className={classes.capitalize} label="Pyörä" icon={<DirectionsBikeIcon />} {...a11yProps(1)} />
+          <Tab className={classes.capitalize} label="Metro" icon={<TrainIcon />} {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -93,14 +96,20 @@ export default function FullWidthTabs() {
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
           <div>
-          <ContentContainer></ContentContainer>
+          <ContentContainer title="Bussi" color="#007ac9">
+            <BusList></BusList>
+          </ContentContainer>
           </div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <Bikes></Bikes>
+        <ContentContainer title="Pyörä" color="#756800">
+            <p>yee</p>
+          </ContentContainer>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
+        <ContentContainer title="Metro" color="#8a3200">
+            <p>yee</p>
+          </ContentContainer>
         </TabPanel>
       </SwipeableViews>
     </div>

@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <MainHeading></MainHeading>
       <TabPanel></TabPanel>
+      
     </div>
   );
 }

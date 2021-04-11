@@ -14,11 +14,12 @@ const MainHeading = () => {
         fontSize: "15px",
         letterSpacing: "3vh",
         fontWeight: "normal",
+        fontFamily: "inherit",
     }
 
     return(
         <div id="header" style={headingContainer}>
-            <h1 style={headingText}>ESCAPE ROIHUPELTO</h1>
+            <h1 style={headingText}>escape roihupelto</h1>
         </div>
     );
 }
